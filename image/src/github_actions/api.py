@@ -18,6 +18,7 @@ NodeId = NewType('NodeId', str)
 
 class GithubApi:
     def __init__(self, host: str, token: Optional[str], cache_path: Optional[str] = None):
+        debug(f'github_token: {token}')
         self._host = host
         self._token = token
 
