@@ -265,6 +265,7 @@ def get_issue_url(pr_url: str) -> IssueUrl:
         issue_url = job_cache[cache_key]
     else:
         response = github.get(pr_url)
+        debug(f'rest response: {response.content}')
         response.raise_for_status()
         issue_url = response.json()['_links']['issue']['href']
 
